@@ -23,8 +23,10 @@ app.listen(PORT,()=>console.log('Listening on PORT:'+PORT));
 app.get('/',(req,res)=>res.sendFile('index.html'));
 
 app.get('/api/ghosts',(req,res)=>{
-  superagent.get('https://api.data.world/v0/datasets/timothyrenner/haunted-places')
+  superagent.post('https://api.data.world/v0/sql/timothyrenner/haunted-places')
     .set('Authorization',`Bearer ${TOKEN}`)
+    .type('form')
+    .send({query:'SELECT * FROM haunted_places_2 LIMIT 10'})
     .then((result)=>{
       console.log(result);
       res.send(result.body);

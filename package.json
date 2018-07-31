@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Paranormal-Map-tivity/Paranormal-Map-tivity#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "superagent": "^3.8.3"
   }
 }

@@ -9,11 +9,20 @@
     <link rel="stylesheet" type="text/css" href="layout.css">
     <link rel="stylesheet" type="text/css" href="module.css">
     <title>Paranormal Map-tivity</title>
+    <style>
+        #map{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header></header>
     <nav></nav>
-    <section class="map-view container"></section>
+    <section class="map-view container">
+        <h1>My Paranormal Map</h1>
+        <div id="map"></div>
+    </section>
     <section class="detail-view container"></section>
     <section class="about-view container">
         <section id="taylor-info"></section>
@@ -22,6 +31,10 @@
         <section id="ben-info"></section>
     </section>
     <footer></footer>
+  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD40VcbEihKDdsk9KSqHGEAg0RH3gmomu8&callback=initMap"
+    async defer></script>
+    <script src="../taylorMap.js"></script>
     <script src="scripts/vendor/jquery-3.3.1.min.js"></script>
     <script src="scripts/vendor/handlebars-v4.0.11.js"></script>
     <script src="server.js"></script>

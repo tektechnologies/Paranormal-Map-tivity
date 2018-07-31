@@ -1,8 +1,8 @@
 function initMap(){
 //map options
   var options = {
-    zoom:8,
-    center:{lat:41.9779,lng:-91.6656}
+    zoom:4,
+    center:{lat:39.8283,lng:-98.5795}
   }
   //new map
   var map =  new google.maps.Map(document.getElementById('map'), options);
@@ -31,5 +31,26 @@ function initMap(){
 
   let ghost= new app.GhostSighting(ghostTest);
   ghost.addMarker(map);
+
+  var ufoTest={
+    city_location:'Right Here',
+    city_longitude: -91.457970,
+    city_latitude: 42.485785,
+    text: 'Right Now'
+  };
+
+  let ufo= new app.UfoSighting(ufoTest);
+  ufo.addMarker(map);
+
+
+  var bigfootTest = {
+    location: 'Look Over Here',
+    longitude: -91.532820,
+    latitude: 42.600914,
+    observed: 'Look Over There'
+  };
+
+  let bigfoot = new app.BigFootSighting(bigfootTest);
+  bigfoot.addMarker(map);
 
 }

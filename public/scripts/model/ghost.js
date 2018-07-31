@@ -26,9 +26,10 @@ var app = app || {};
     }
 
     //check for content
-    if(props.content){
+    if(props.description){
+      console.log(props.description);
       var infoWindow = new google.maps.InfoWindow({
-        content:props.content
+        content:'<h1>'+props.description+'</h1>'
       });
 
       marker.addListener('click', function(){

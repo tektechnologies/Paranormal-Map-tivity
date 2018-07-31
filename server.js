@@ -35,3 +35,9 @@ app.get('/api/ghosts',(req,res)=>{
       res.sendStatus(500).send(err);
     });
 });
+
+app.get('/api/ufos', (req,res)=>{
+  superagent.post('https://api.data.world/v0/sql/khturner/national-ufo-reporting-center-reports')
+    .set('Authorization', `Bearer ${TOKEN}`)
+    
+})

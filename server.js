@@ -44,7 +44,7 @@ app.get('/api/ufos', (req,res)=>{
       res.send(result.body);
     }, err=>{
       res.sendStatus(500).send(err);
-    })
+    });
 });
 
 app.get('/api/bigfoot', (req,res)=>{
@@ -56,5 +56,5 @@ app.get('/api/bigfoot', (req,res)=>{
       res.send(result.body);
     }, err=>{
       res.sendStatus(500).send(err);
-    })
-})
+    });
+});

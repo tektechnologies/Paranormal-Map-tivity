@@ -4,16 +4,15 @@
 var app = app || {};
 
 (function(module){
-  function GhostSighting(data){
-    this.type='spirit';
-    this.name=data.location;
-    this.lng=data.longitude;
-    this.lat=data.latitude;
-    this.description=data.description;
-    this.iconImage='../icons/ghostpin.png';
+  function BigFootSighting(data){
+    this.type = 'bigfoot';
+    this.name = data.location;
+    this.lng = data.longitude;
+    this.lat = data.latitude;
+    this.description = data.observed;
+    this.iconImage = '../icons/bigfootpin.png';
   }
-
-  GhostSighting.prototype.addMarker = function(map) {
+  BigFootSighting.prototype.addMarker = function(map) {
     var props = this;
     var marker = new google.maps.Marker({
       position:{lng: props.lng, lat: props.lat},
@@ -40,5 +39,5 @@ var app = app || {};
     }
   };
 
-  module.GhostSighting = GhostSighting;
+  module.BigFootSighting = BigFootSighting;
 })(app);

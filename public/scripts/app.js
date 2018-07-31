@@ -44,8 +44,8 @@ var app = app || {};
 
   function BigFootSighting(data){
     this.type = 'bigfoot';
-    this.name = data.location;
-    this.lng = data.longitude;
+    this.name = data.longitude;
+    this.lng = data.location;
     this.lat = data.latitude;
     this.description = data.observed;
   }

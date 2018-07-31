@@ -51,7 +51,7 @@ app.get('/api/bigfoot', (req,res)=>{
   superagent.post('https://api.data.world/v0/sql/timothyrenner/bfro-sightings-data')
     .set('Authorization', `Bearer ${TOKEN}`)
     .type('form')
-    .send({query: 'SELECT * FROM bfro_reports LIMIT 10'})
+    .send({query: 'SELECT * FROM bfro_report_locations LIMIT 10'})
     .then((result)=>{
       res.send(result.body);
     }, err=>{

@@ -29,7 +29,7 @@ var app = app || {};
     this.name=data.location;
     this.lng=data.longitude;
     this.lat=data.latitude;
-    this.description=data.description;
+    this.description=data.summary;
   }
 
   var ufoTest={
@@ -47,7 +47,7 @@ var app = app || {};
     this.name = data.location;
     this.lng = data.longitude;
     this.lat = data.latitude;
-    this.description = data.description;
+    this.description = data.observed;
   }
 
   var bigfootTest = {

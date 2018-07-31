@@ -36,10 +36,10 @@ app.get('/api/ghosts',(req,res)=>{
 });
 
 app.get('/api/ufos', (req,res)=>{
-  superagent.post('https://api.data.world/v0/sql/khturner/national-ufo-reporting-center-reports')
+  superagent.post('https://api.data.world/v0/sql/timothyrenner/ufo-sightings')
     .set('Authorization', `Bearer ${TOKEN}`)
     .type('form')
-    .send({query: 'SELECT * FROM nuforc_events LIMIT 10'})
+    .send({query: 'SELECT * FROM nuforc_reports LIMIT 10'})
     .then((result)=>{
       res.send(result.body);
     }, err=>{

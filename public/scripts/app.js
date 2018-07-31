@@ -26,10 +26,10 @@ var app = app || {};
 
   function UfoSighting(data){
     this.type='alien';
-    this.name=data.location;
-    this.lng=data.longitude;
-    this.lat=data.latitude;
-    this.description=data.summary;
+    this.name=data.city_location;
+    this.lng=data.city_longitude;
+    this.lat=data.city_latitude;
+    this.description=data.text;
   }
 
   var ufoTest={

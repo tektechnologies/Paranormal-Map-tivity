@@ -24,6 +24,41 @@ var app = app || {};
   let ghost= new GhostSighting(ghostTest);
   sightings.push(ghost);
 
-  module.sightings=sightings;
+  function UfoSighting(data){
+    this.type='alien';
+    this.name=data.location;
+    this.lng=data.longitude;
+    this.lat=data.latitude;
+    this.description=data.description;
+  }
 
+  var ufoTest={
+    location:'Right Here',
+    longitude: -91.457970,
+    latitude: 42.485785,
+    description: 'Right Now'
+  }
+
+  let ufo = new UfoSighting(ufoTest);
+  sightings.push(ufo);
+
+  function BigFootSighting(data){
+    this.type = 'bigfoot';
+    this.name = data.location;
+    this.lng = data.longitude;
+    this.lat = data.latitude;
+    this.description = data.description;
+  }
+
+  var bigfootTest = {
+    location: 'Look Over Here',
+    longitude: -91.532820,
+    latitude: 42.600914,
+    description: 'Look Over There'
+  }
+
+  let bigfoot = new BigFootSighting(bigfootTest);
+  sightings.push(bigfoot);
+
+  module.sightings=sightings;
 })(app);

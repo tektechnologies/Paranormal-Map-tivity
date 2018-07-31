@@ -9,19 +9,53 @@
     <link rel="stylesheet" type="text/css" href="layout.css">
     <link rel="stylesheet" type="text/css" href="module.css">
     <title>Paranormal Map-tivity</title>
-    <style>
-        #map{
-            height: 400px;
-            width: 100%;
-        }
-    </style>
+    <script id="ghost-details" type="text/x-handlebars-template">
+        <div class="ghost-details">
+            <ul>
+                <li><h4>{{ghost-location}}</h4></li>            
+                <li>{{ghost-description}}</li>
+            </ul>
+        </div>
+    </script>
+    <script id="ufo-details" type="text/x-handlebars-template">
+        <div class="ufo-details">
+            <ul>
+                <li><h4>{{ufo-location}}</h4></li>
+                <li>{{ufo-date-time}}</li>
+                <li>{{shape}}</li>            
+                <li>{{ufo-description}}</li>
+                <li><a href="{{report-link}}">{{report-link}}</a></li>
+            </ul>
+        </div>
+    </script>
+    <script id="bigfoot-details" type="text/x-handlebars-template">
+        <div class="bigfoot-details">
+            <ul>
+                <li><h4>{{bigfoot-location}}</h4></li>
+                <li>{{bigfoot-date-time}}</li>
+                <li>{{bigfoot-description}}</li>
+            </ul>
+        </div>
+    </script>
 </head>
 <body>
     <header> <h1>hellooo, im a freaking ghost</h1></header>
-    <nav></nav>
+    <!-- the drop down menu is being borrowed from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_filter
+        the javascript has not been added as of 7/31 -->
+    <nav class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="Dropdown" class="dropdown-content">
+            <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">  SEARCH FIELD-->
+            <a href="#ghosts">Ghost Sightings</a>
+            <a href="#ufo">U.F.O. Sightings</a>
+            <a href="#bigfoot">Sasquatch Sightings</a>
+        </div>
+    </nav>
+        <!-- end dropdown -->
     <section class="map-view container">
         <h1>My Paranormal Map</h1>
         <div id="map"></div>
+        <div id="details"></div>
     </section>
     <section class="detail-view container"></section>
     <section class="about-view container">
@@ -30,15 +64,19 @@
         <section id="john-info"></section>
         <section id="ben-info"></section>
     </section>
-    <footer></footer>
+
+    <footer>
+        <a href="#">About Us</a>
+    </footer>
+  
+    <script src="scripts/vendor/jquery-3.3.1.min.js"></script>
+    <script src="scripts/vendor/handlebars-v4.0.11.js"></script>
     <script src="scripts/model/bigFoot.js"></script>
     <script src="scripts/model/ufo.js"></script>
     <script src="scripts/model/ghost.js"></script>
     <script src="scripts/view/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD40VcbEihKDdsk9KSqHGEAg0RH3gmomu8&callback=initMap"
         async defer></script>
-    <script src="scripts/vendor/jquery-3.3.1.min.js"></script>
-    <script src="scripts/vendor/handlebars-v4.0.11.js"></script>
 </body>
 
 </html>

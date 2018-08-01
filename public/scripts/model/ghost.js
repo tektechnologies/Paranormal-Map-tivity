@@ -5,6 +5,7 @@ var app = app || {};
 
 (function(module){
   function GhostSighting(data){
+    this.index=data.row_index;
     this.type='spirit';
     this.name=data.location;
     this.lng=data.longitude;

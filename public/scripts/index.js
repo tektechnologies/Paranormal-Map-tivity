@@ -11,8 +11,19 @@ var app = app || {};
 
   module.Environment = module.inProduction ? productionUrl : developmentUrl;
 
+
   module.showOnly = (selector) => {
     $(".container").hide();
     $(selector).show();
   }
 })(app);
+
+
+
+ghost.prototype.toHtml= function() {
+  let ghostTemplate = Handlebars.compile(document.getElementById('#ghost-details').innerText);
+  ghostTemplate();  
+}
+
+// Book.prototype.toHtml = function(){return app.render('#detail-template', this);}
+

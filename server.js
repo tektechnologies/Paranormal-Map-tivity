@@ -57,8 +57,41 @@ app.get('/api/bigfoot', (req,res)=>{
     });
 });
 
+app.get('/api/:type/:index',(req,res)=>{
+  let apiUrl;
+  let table;
+  let id = parseInt(req.params.index);
+  if(req.params.type==="ghosts"){
+    apiUrl='https://api.data.world/v0/sql/timothyrenner/haunted-places';
+    table='haunted_places_2';
+  }
+  else if(req.params.type==='ufos'){
+    apiUrl='https://api.data.world/v0/sql/timothyrenner/ufo-sightings';
+    table='nuforc_reports';
+  }
+  else{
+    apiUrl='https://api.data.world/v0/sql/timothyrenner/bfro-sightings-data';
+    table='bfro_reports_geocoded';
+  }
+  superagent.post(apiUrl)
+    .set('Authorization', `Bearer ${TOKEN}`)
+    .type('form')
+    .send({query: `SELECT ${table}.*,row_index FROM ${table} WHERE row_index = '${id}' LIMIT 10`})
+    .then((result)=>{
+      if(result.body.length){
+        res.send(result.body[0]);
+      }
+      else{
+        res.sendStatus(404);
+      }
+    }, err=>{
+      res.sendStatus(500).send(err);
+    });
+});
+
 app.get('*', (req,res) =>{
   res.sendFile('public/index.html',{root: '.'});
 });
 
 app.listen(PORT,()=>console.log('Listening on PORT:'+PORT));
+

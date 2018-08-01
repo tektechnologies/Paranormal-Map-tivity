@@ -15,10 +15,25 @@ var app = app || {};
     }));
   };
 
+  sightings.loadOne = (ctx, callback) => {
+    $.get(`${app.Environment}/api/${ctx.params.type}/${ctx.params.index}`)
+      .then(newData => {
+        if(newData.text){
+          console.log('is alien!');
+        }
+        if(newData.description){
+          console.log('is ghost!');
+        }
+        if(newData.observed){
+          console.log('is bigfoot!');
+        }
+      })
+  };
+
   sightings.fetchAll = callback => {
-    $.get(`${app.Environment}/api/ghosts`)
+    $.get(`${app.Environment}/api/spirit`)
       .then(newData => sightings.loadAll(app.GhostSighting,newData));
-    $.get(`${app.Environment}/api/ufos`).then(newData =>sightings.loadAll(app.UfoSighting,newData));
+    $.get(`${app.Environment}/api/alien`).then(newData =>sightings.loadAll(app.UfoSighting,newData));
     $.get(`${app.Environment}/api/bigfoot`).then(newData => sightings.loadAll(app.BigFootSighting,newData));
   };
 })(app);

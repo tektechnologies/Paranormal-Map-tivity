@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended:true}));
 
 app.get('/',(req,res)=>res.sendFile('index.html'));
 
-app.get('/api/ghosts',(req,res)=>{
+app.get('/api/spirit',(req,res)=>{
   superagent.post('https://api.data.world/v0/sql/timothyrenner/haunted-places')
     .set('Authorization',`Bearer ${TOKEN}`)
     .type('form')
@@ -33,7 +33,7 @@ app.get('/api/ghosts',(req,res)=>{
     });
 });
 
-app.get('/api/ufos', (req,res)=>{
+app.get('/api/alien', (req,res)=>{
   superagent.post('https://api.data.world/v0/sql/timothyrenner/ufo-sightings')
     .set('Authorization', `Bearer ${TOKEN}`)
     .type('form')

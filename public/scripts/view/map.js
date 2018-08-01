@@ -1,3 +1,7 @@
+'use strict';
+
+var app = app || {};
+
 function initMap(){
 //map options
   var options = {

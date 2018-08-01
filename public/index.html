@@ -40,16 +40,13 @@
 </head>
 <body>
     <header> <h1>hellooo, im a freaking ghost</h1></header>
-    <!-- the drop down menu is being borrowed from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_filter
-        the javascript has not been added as of 7/31 -->
+    
     <nav class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="Dropdown" class="dropdown-content">
-            <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">  SEARCH FIELD-->
-            <a href="#ghosts">Ghost Sightings</a>
-            <a href="#ufo">U.F.O. Sightings</a>
-            <a href="#bigfoot">Sasquatch Sightings</a>
-        </div>
+        <select>
+            <option value="ghosts">Ghosts</option>
+            <option value="aliens">Aliens</option>
+            <option value="bigfoot">Sasquatch</option>
+        </select>
     </nav>
         <!-- end dropdown -->
     <section class="map-view container">

@@ -15,8 +15,9 @@ var app = app || {};
     }));
   };
 
-  sightings.loadOne = (ctx, callback) => {
-    $.get(`${app.Environment}/api/${ctx.params.type}/${ctx.params.index}`)
+  sightings.loadOne = (type, index) => {
+    console.log('loadOne is being randed');
+    $.get(`${app.Environment}/api/${type}/${index}`)
       .then(newData => {
         if(newData.text){
           console.log('is alien!');

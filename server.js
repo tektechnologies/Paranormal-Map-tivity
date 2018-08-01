@@ -18,8 +18,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 */
 
-app.listen(PORT,()=>console.log('Listening on PORT:'+PORT));
-
 app.get('/',(req,res)=>res.sendFile('index.html'));
 
 app.get('/api/ghosts',(req,res)=>{
@@ -90,3 +88,10 @@ app.get('/api/:type/:index',(req,res)=>{
       res.sendStatus(500).send(err);
     });
 });
+
+app.get('*', (req,res) =>{
+  res.sendFile('public/index.html',{root: '.'});
+});
+
+app.listen(PORT,()=>console.log('Listening on PORT:'+PORT));
+

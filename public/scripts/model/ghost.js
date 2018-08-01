@@ -40,6 +40,16 @@ var app = app || {};
       });
     }
   };
+  
+  
+
+  GhostSighting.prototype.toHtml= function() {
+    let ghostTemplate = Handlebars.compile(document.getElementById('#ghost-details').innerText);
+    return ghostTemplate(this);
+      
+  };
+
+// Book.prototype.toHtml = function(){return app.render('#detail-template', this);}
 
   module.GhostSighting = GhostSighting;
 })(app);

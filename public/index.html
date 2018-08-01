@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="styles/reset.css">
-  <link rel="stylesheet" type="text/css" href="styles/base.css">
-  <link rel="stylesheet" type="text/css" href="styles/ayout.css">
-  <link rel="stylesheet" type="text/css" href="styles/module.css">
-  <title>Paranormal Map-tivity</title>
-  <script id="ghost-details" type="text/x-handlebars-template">
-      <div class="ghost-details">
-          <ul>
-              <li><h4>{{ghost-location}}</h4></li>            
-              <li>{{ghost-description}}</li>
-          </ul>
-      </div>
-  </script>
-  <script id="ufo-details" type="text/x-handlebars-template">
-      <div class="ufo-details">
-          <ul>
-              <li><h4>{{ufo-location}}</h4></li>
-              <li>{{ufo-date-time}}</li>
-              <li>{{shape}}</li>            
-              <li>{{ufo-description}}</li>
-              <li><a href="{{report-link}}">{{report-link}}</a></li>
-          </ul>
-      </div>
-  </script>
-  <script id="bigfoot-details" type="text/x-handlebars-template">
-      <div class="bigfoot-details">
-          <ul>
-              <li><h4>{{bigfoot-location}}</h4></li>
-              <li>{{bigfoot-date-time}}</li>
-              <li>{{bigfoot-description}}</li>
-          </ul>
-      </div>
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="styles/module.css">
+    <title>Paranormal Map-tivity</title>
+    <script id="ghost-details" type="text/x-handlebars-template">
+        <div class="ghost-details">
+            <ul>
+                <li><h4>{{ghost-location}}</h4></li>            
+                <li>{{ghost-description}}</li>
+            </ul>
+        </div>
+    </script>
+    <script id="ufo-details" type="text/x-handlebars-template">
+        <div class="ufo-details">
+            <ul>
+                <li><h4>{{ufo-location}}</h4></li>
+                <li>{{ufo-date-time}}</li>
+                <li>{{shape}}</li>            
+                <li>{{ufo-description}}</li>
+                <li><a href="{{report-link}}">{{report-link}}</a></li>
+            </ul>
+        </div>
+    </script>
+    <script id="bigfoot-details" type="text/x-handlebars-template">
+        <div class="bigfoot-details">
+            <ul>
+                <li><h4>{{bigfoot-location}}</h4></li>
+                <li>{{bigfoot-date-time}}</li>
+                <li>{{bigfoot-description}}</li>
+            </ul>
+        </div>
+    </script>
+    <script class="test" type="text/x-handlebars-template">
+        <div>
+            <h1>{{name}}</h1>
+        </div>
+    </script>
 </head>
 <body>
   <header> <h1>hellooo, im a freaking ghost</h1></header>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" href="styles/base.css">
-    <link rel="stylesheet" type="text/css" href="styles/ayout.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
     <link rel="stylesheet" type="text/css" href="styles/module.css">
     <title>Paranormal Map-tivity</title>
     <script id="ghost-details" type="text/x-handlebars-template">
@@ -40,16 +40,13 @@
 </head>
 <body>
     <header> <h1>hellooo, im a freaking ghost</h1></header>
-    <!-- the drop down menu is being borrowed from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_filter
-        the javascript has not been added as of 7/31 -->
+    
     <nav class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="Dropdown" class="dropdown-content">
-            <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">  SEARCH FIELD-->
-            <a href="#ghosts">Ghost Sightings</a>
-            <a href="#ufo">U.F.O. Sightings</a>
-            <a href="#bigfoot">Sasquatch Sightings</a>
-        </div>
+        <select>
+            <option value="ghosts">Ghosts</option>
+            <option value="aliens">Aliens</option>
+            <option value="bigfoot">Sasquatch</option>
+        </select>
     </nav>
         <!-- end dropdown -->
     <section class="map-view container">
@@ -58,14 +55,14 @@
         <div id="details"></div>
     </section>
     <section class="detail-view container"></section>
-    <section class="about-view container">
+    <section class="about container">
         <section id="taylor-info"></section>
         <section id="ethan-info"></section>
         <section id="john-info"></section>
         <section id="ben-info"></section>
     </section>
     <footer>
-        <a href="#">About Us</a>
+        <a href="/about">About Us</a>
     </footer>
     <script src="scripts/vendor/jquery-3.3.1.min.js"></script>
     <script src="scripts/vendor/handlebars-v4.0.11.js"></script>

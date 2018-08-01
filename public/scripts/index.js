@@ -11,4 +11,8 @@ var app = app || {};
 
   module.Environment = module.inProduction ? productionUrl : developmentUrl;
 
+  module.showOnly = (selector) => {
+    $(".container").hide();
+    $(selector).show();
+  }
 })(app);

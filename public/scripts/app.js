@@ -20,7 +20,7 @@ var app = app || {};
     longitude: -91.457970,
     latitude: 42.485785,
     description: 'Right Now'
-  }
+  };
 
   let ufo = new UfoSighting(ufoTest);
   sightings.all.push(ufo);

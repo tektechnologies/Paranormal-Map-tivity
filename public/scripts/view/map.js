@@ -3,7 +3,7 @@ function initMap(){
   var options = {
     zoom:4,
     center:{lat:39.8283,lng:-98.5795}
-  }
+  };
   //new map
   var map =  new google.maps.Map(document.getElementById('map'), options);
 
@@ -53,4 +53,5 @@ function initMap(){
   let bigfoot = new app.BigFootSighting(bigfootTest);
   bigfoot.addMarker(map);
 
+  app.sightings.all.forEach(sighting => sighting.addMarker(map));
 }

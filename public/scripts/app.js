@@ -6,15 +6,14 @@ var app = app || {};
 
   var sightings={};
   sightings.all = [];
-  
+
   module.sightings=sightings;
 
   sightings.loadAll = (ctor,newData) => {
     sightings.all = sightings.all.concat(newData.map(function(report) {
-      return new ctor(report)   
+      return new ctor(report);
     }));
-     
-  }
+  };
 
   sightings.fetchAll = callback => {
     $.get(`${app.Environment}/api/ghosts`)

@@ -6,7 +6,7 @@ var app = app || {};
 (function(module){
   function UfoSighting(data){
     this.type='alien';
-    this.name=data.city_location;
+    this.name=data.city;
     this.lng=data.city_longitude;
     this.lat=data.city_latitude;
     this.description=data.text;

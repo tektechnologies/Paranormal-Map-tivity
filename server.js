@@ -39,7 +39,7 @@ app.get('/api/ufos', (req,res)=>{
   superagent.post('https://api.data.world/v0/sql/timothyrenner/ufo-sightings')
     .set('Authorization', `Bearer ${TOKEN}`)
     .type('form')
-    .send({query: 'SELECT city_location, city_longitude, city_latitude, text FROM nuforc_reports WHERE city_latitude IS NOT NULL LIMIT 10'})
+    .send({query: 'SELECT city, city_longitude, city_latitude, text FROM nuforc_reports WHERE city_latitude IS NOT NULL LIMIT 10'})
     .then((result)=>{
       res.send(result.body);
     }, err=>{

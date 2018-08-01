@@ -4,7 +4,8 @@ var app = app || {};
 
 (function(module){
 
-  var sightings=[];
+  var sightings={};
+  sightings.all = [];
 
   function UfoSighting(data){
     this.type='alien';
@@ -22,7 +23,7 @@ var app = app || {};
   };
 
   let ufo = new UfoSighting(ufoTest);
-  sightings.push(ufo);
+  sightings.all.push(ufo);
 
   function BigFootSighting(data){
     this.type = 'bigfoot';
@@ -40,7 +41,22 @@ var app = app || {};
   }
 
   let bigfoot = new BigFootSighting(bigfootTest);
-  sightings.push(bigfoot);
+  sightings.all.push(bigfoot);
 
   module.sightings=sightings;
+
+  sightings.loadAll = (ctor,newData) => {
+    sightings.all = newData.map(function(report) {
+      return new ctor(report)
+      
+    });
+      
+  }
+
+  sightings.fetchAll = callback => {
+    $.get(`${app.Environment}/api/ghosts`)
+      .then(newData => sightings.loadAll(app.GhostSighting,newData));
+    // $.get(`${app.Environment}/api/ufos`).then(sightings.loadAll(app.UfoSightings));
+    // $.get(`${app.Environment}/api/bigfoot`).then(sightings.loadAll(app.BigFootSighting));
+  };
 })(app);

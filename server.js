@@ -28,7 +28,7 @@ app.get('/api/ghosts',(req,res)=>{
     .type('form')
     .send({query:'SELECT * FROM haunted_places_2 LIMIT 10'})
     .then((result)=>{
-      res.send(result.body);
+      res.send(results.body);
     }, err=>{
       console.error(err);
       res.sendStatus(500).send(err);

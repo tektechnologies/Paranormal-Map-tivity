@@ -6,7 +6,7 @@ var app = app || {};
 (function(module){
   function BigFootSighting(data){
     this.type = 'bigfoot';
-    this.name = data.location;
+    this.name = data.county;
     this.lng = data.longitude;
     this.lat = data.latitude;
     this.description = data.observed;

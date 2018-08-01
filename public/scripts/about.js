@@ -1,13 +1,23 @@
-// 'use strict';
+'use strict';
 
-// var app = app || {};
+var app = app || {};
 
-// (function(module){
+(function(module){
 
-//   var aboutUs = {}
-//   module.aboutUs = aboutUs;
+  var pages = {}
+  module.pages = pages;
 
-//   aboutUs.initAboutPage = () => {
-    
-//   }
-// })(app);
+  pages.initMapPage = () => {
+    console.log('loading');
+    $('#map').empty();
+    app.showOnly('.map-view');
+    $('.dropdown').show();
+  }
+
+  pages.initAboutPage = (event) => {
+    $('.about').hide();
+    app.showOnly('.about');
+  }
+
+  
+})(app);

@@ -9,6 +9,6 @@ var app = app || {};
 
   module.inProduction = /^(?!localhost|127)/.test(window.location.hostname);
 
-  module.Environment = module.inProduction ? developmentUrl : productionUrl;
+  module.Environment = module.inProduction ? productionUrl : developmentUrl;
 
 })(app);

@@ -13,8 +13,7 @@ var app = app || {};
     $('.dropdown').show();
   };
 
-  pages.initAboutPage = (event) => {
-    $('.about').hide();
+  pages.initAboutPage = () => {
     app.showOnly('.about');
   };
 

@@ -10,9 +10,9 @@ var app = app || {};
   module.sightings=sightings;
 
   sightings.loadAll = (ctor,newData) => {
-    sightings.all = sightings.all.concat(newData.map(function(report) {
+    return newData.map(function(report) {
       return new ctor(report);
-    }));
+    });
   };
 
   sightings.loadOne = (type, index) => {
@@ -41,8 +41,13 @@ var app = app || {};
 
   sightings.fetchAll = callback => {
     $.get(`${app.Environment}/api/spirit`)
-      .then(newData => sightings.loadAll(app.GhostSighting,newData));
-    $.get(`${app.Environment}/api/alien`).then(newData =>sightings.loadAll(app.UfoSighting,newData));
-    $.get(`${app.Environment}/api/bigfoot`).then(newData => sightings.loadAll(app.BigFootSighting,newData));
+      .then(newData => sightings.loadAll(app.GhostSighting,newData))
+      .then(callback);
+    $.get(`${app.Environment}/api/alien`)
+      .then(newData =>sightings.loadAll(app.UfoSighting,newData))
+      .then(callback);
+    $.get(`${app.Environment}/api/bigfoot`)
+      .then(newData => sightings.loadAll(app.BigFootSighting,newData))
+      .then(callback);
   };
 })(app);

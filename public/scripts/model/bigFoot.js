@@ -24,9 +24,10 @@ var app = app || {};
 
     //check for content
     if(props.county){
+      console.log(this);
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>'+props.county+'</h1>' +
-        `<a href="/detail/bigfoot">View Report</a>`
+        `<a href="/detail/bigfoot/${this.row_index}">View Report</a>`
       });
 
       marker.addListener('click', function(event){

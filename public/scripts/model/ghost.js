@@ -27,7 +27,7 @@ var app = app || {};
     if(props.location){
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>'+props.location+'</h1>' +
-        '<a href="/detail/spirit">View Report</a>'
+        `<a href="/detail/spirit/${this.row_index}">View Report</a>`
       });
 
       marker.addListener('click', function(){

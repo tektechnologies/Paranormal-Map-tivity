@@ -27,7 +27,7 @@ var app = app || {};
     if(props.city){
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>' + props.city + '</h1>' +
-        '<a href="/detail/alien">View Report</a>'
+        `<a href="/detail/alien/${this.row_index}">View Report</a>`
       });
 
       marker.addListener('click', function(){

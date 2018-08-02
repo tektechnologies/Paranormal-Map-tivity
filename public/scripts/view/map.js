@@ -26,13 +26,7 @@ var app = app || {};
     var map =  new google.maps.Map(document.getElementById('map'), options);
 
     //array of markers
-    // var markers = [
-    // {
-    //     coords:{lat:41.971044,lng:-91.656106},
-    //     iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-    //     content:'<h1>Geonetric Building</h1>'
-    //     }
-    // ];
+    var markers = [];
 
     // //Loop through marker array
     //    for(var i = 0; i<markers.length; i++){
@@ -76,7 +70,7 @@ var app = app || {};
       console.log('Map idle');
 
       app.sightings.fetchAll(map.getBounds(), (sightings) => {
-        sightings.forEach(sighting => sighting.addMarker(map));
+        sightings.forEach(sighting => markers.push(sighting.addMarker(map)));
       });
     });
   };

@@ -26,7 +26,7 @@ var app = app || {};
     //check for content
     if(props.location){
       var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>'+props.location+'</h1>' +
+        content:'<h5>'+props.location+'</h5>' +
         `<a href="/detail/spirit/${this.row_index}">View Report</a>`
       });
 

@@ -26,7 +26,7 @@ var app = app || {};
     if(props.county){
       console.log(this);
       var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>'+props.county+'</h1>' +
+        content:'<h5>'+props.county+'</h5>' +
         `<a href="/detail/bigfoot/${this.row_index}">View Report</a>`
       });
 

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Cutive+Mono|Special+Elite" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="/styles/base.css">
   <link rel="stylesheet" type="text/css" href="/styles/layout.css">
@@ -24,7 +25,7 @@
               <li>{{date_time}}</li>
               <li>Shape of the craft: {{shape}}</li>            
               <li>{{summary}}</li>
-              <li><a href="{{report_link}}">{{report_link}}</a></li>
+              <li>Original report: <a href="{{report_link}}">{{report_link}}</a></li>
           </ul>
       </div>
   </script>
@@ -37,14 +38,15 @@
           </ul>
       </div>
   </script>
-  <script class="test" type="text/x-handlebars-template">
-      <div>
-          <h1>{{name}}</h1>
-      </div>
-  </script>
 </head>
 <body>
-  <header> <h1>hellooo, im a freaking ghost</h1></header>
+  <header> 
+    <div>
+        <img src="">
+    </div>
+    <div><h1>Paranormal Map-tivity</h1></div>
+    <div><img src="/images/grass.png" class="grass"></div>
+</header>
   <nav>
     <li>
       <a href='/'>Home Page</a>
@@ -62,7 +64,6 @@
     </form>
   </div>
   <section class="map-view container">
-    <h1>My Paranormal Map</h1>
     <div id="map"></div>
   </section>
   <section class="detail-view container"></section>

@@ -1,0 +1,47 @@
+/* font-family: 'Cutive Mono', monospace;
+font-family: 'Special Elite', cursive;
+font-family: 'Bangers', cursive; */
+
+/* color scheme:
+#160F29 erie black
+#4C4B63 indendence (a navy blue type color)
+#EAE0D5 pearl
+#474448 charcoal grey
+#E0DDCF bone (optional lighter color) */
+
+
+/* 768 is the magic responsive number
+    next break point would be 1024 */
+
+body {
+  background-color: #4C4B63;
+  color: #160F29;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 12pt;
+  font-weight: bold;
+  margin:   0px 45px 0px 45px;
+}
+
+h1 {
+  font-family: 'Bangers', cursive;
+  font-size: 64pt;
+  font-variant: small-caps;
+  color: white;
+  -webkit-text-stroke: .1px black;
+  text-shadow: 2px 2px #666666;
+}
+
+h3 {
+  font-family: 'Special Elite', cursive;
+  font-size: 36pt;
+}
+
+h4 {
+  font-family: 'Special Elite', cursive;
+  font-size: 24pt;
+}
+
+h5 {
+  font-family: 'Special Elite', cursive;
+  font-size: 12pt;
+}

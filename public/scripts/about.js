@@ -17,5 +17,9 @@ var app = app || {};
     app.showOnly('.about');
   };
 
+  pages.initNothing = () => {
+    app.showOnly('.fourOhFour-view');
+  };
+
   
 })(app);

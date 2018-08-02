@@ -24,7 +24,6 @@ var app = app || {};
 
     //check for content
     if(props.county){
-      console.log(props.county);
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>'+props.county+'</h1>' +
         `<button data-type="${props.type}" data-index="${props.row_index}">Details</button>`

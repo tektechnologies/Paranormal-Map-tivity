@@ -72,10 +72,12 @@ var app = app || {};
     let bigfoot = new app.BigFootSighting(bigfootTest);
     bigfoot.addMarker(map);
 
-    app.sightings.all.forEach(sighting => sighting.addMarker(map));
-
     google.maps.event.addListener(map, 'idle', function() {
       console.log('Map idle');
+
+      app.sightings.fetchAll(map.getBounds(), (sightings) => {
+        sightings.forEach(sighting => sighting.addMarker(map));
+      });
     });
   };
 

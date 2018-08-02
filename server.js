@@ -46,10 +46,21 @@ app.get('/api/spirit',(req, res)=>{
 });
 
 app.get('/api/alien', (req,res)=>{
+  var s = req.query.south;
+  var n = req.query.north;
+  var w = req.query.west;
+  var e = req.query.east;
+  var query = `
+  SELECT row_index,city, city_longitude, city_latitude, text 
+  FROM nuforc_reports 
+  WHERE city_latitude BETWEEN ${s} AND ${n} 
+  AND city_longitude BETWEEN ${w} AND ${e}
+  LIMIT 50
+  `;
   superagent.post('https://api.data.world/v0/sql/timothyrenner/ufo-sightings')
     .set('Authorization', `Bearer ${TOKEN}`)
     .type('form')
-    .send({query: 'SELECT row_index,city, city_longitude, city_latitude, text FROM nuforc_reports WHERE city_latitude IS NOT NULL LIMIT 10'})
+    .send({query})
     .then((result)=>{
       res.send(result.body);
     })

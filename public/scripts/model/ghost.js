@@ -34,6 +34,7 @@ var app = app || {};
         infoWindow.open(map, marker);
       });
     }
+    return marker;
   };
   GhostSighting.prototype.toHtml= function() {
     let ghostTemplate = Handlebars.compile(document.getElementById('ghost-details').innerText);

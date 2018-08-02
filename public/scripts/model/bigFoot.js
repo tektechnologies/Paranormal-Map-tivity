@@ -35,6 +35,7 @@ var app = app || {};
       });
 
     }
+    return marker;
   };
 
   BigFootSighting.prototype.toHtml= function() {

@@ -34,6 +34,7 @@ var app = app || {};
         infoWindow.open(map, marker);
       });
     }
+    return marker;
   };
   UfoSighting.prototype.toHtml= function() {
     let ufoTemplate = Handlebars.compile(document.getElementById('ufo-details').innerText);

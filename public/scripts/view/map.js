@@ -7,6 +7,8 @@ var app = app || {};
 
   var maps = {};
   module.maps = maps;
+  maps.markers = [];
+  
 
   maps.initMap = () =>{
     console.log('initMap');
@@ -19,14 +21,10 @@ var app = app || {};
       center:{lat:39.8283,lng:-98.5795}
     };
 
-
-
-
     //new map
     var map =  new google.maps.Map(document.getElementById('map'), options);
 
     //array of markers
-    var markers = [];
 
     // //Loop through marker array
     //    for(var i = 0; i<markers.length; i++){
@@ -70,7 +68,8 @@ var app = app || {};
       console.log('Map idle');
 
       app.sightings.fetchAll(map.getBounds(), (sightings) => {
-        sightings.forEach(sighting => markers.push(sighting.addMarker(map)));
+        sightings.forEach(sighting => maps.markers.push(sighting.addMarker(map)));
+        console.log(maps.markers);
       });
     });
   };

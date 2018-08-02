@@ -20,11 +20,11 @@ var app = app || {};
     $.get(`${app.Environment}/api/${type}/${index}`)
       .then(newData => {
         let one={};
-        if(newData.text){
-          one = new app.UfoSighting(newData);
-        }
         if(newData.description){
           one = new app.GhostSighting(newData);
+        }
+        if(newData.text){
+          one = new app.UfoSighting(newData);
         }
         if(newData.observed){
           one = new app.BigFootSighting(newData);

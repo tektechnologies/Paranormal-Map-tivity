@@ -5,12 +5,8 @@ var app = app || {};
 
 (function(module){
   function BigFootSighting(data){
-    this.index = data.row_index;
+    Object.keys(data).forEach(key => this[key] = data[key]);
     this.type = 'bigfoot';
-    this.name = data.county;
-    this.lng = data.longitude;
-    this.lat = data.latitude;
-    this.description = data.observed;
     this.iconImage = '../icons/bigfootpin.png';
   }
   BigFootSighting.prototype.addMarker = function(map) {

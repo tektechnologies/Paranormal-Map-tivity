@@ -20,11 +20,22 @@ app.use(express.urlencoded({extended:true}));
 
 app.get('/',(req,res)=>res.sendFile('index.html'));
 
-app.get('/api/spirit',(req,res)=>{
+app.get('/api/spirit',(req, res)=>{
+  var s = req.query.south;
+  var n = req.query.north;
+  var w = req.query.west;
+  var e = req.query.east;
+  var query = `
+    SELECT row_index,location,longitude, latitude, description
+    FROM haunted_places_2
+    WHERE latitude BETWEEN ${s} AND ${n}
+    AND longitude BETWEEN ${w} AND ${e}
+    LIMIT 50
+    `;
   superagent.post('https://api.data.world/v0/sql/timothyrenner/haunted-places')
     .set('Authorization',`Bearer ${TOKEN}`)
     .type('form')
-    .send({query:'SELECT row_index,location,longitude, latitude, description FROM haunted_places_2 WHERE latitude IS NOT NULL LIMIT 10'})
+    .send({query})
     .then((result)=>{
       res.send(result.body);
     }, err=>{

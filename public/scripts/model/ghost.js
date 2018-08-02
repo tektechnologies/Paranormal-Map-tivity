@@ -25,7 +25,6 @@ var app = app || {};
 
     //check for content
     if(props.location){
-      console.log(props.location);
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>'+props.location+'</h1>' +
         '<button id = detailButton>Details</button>'

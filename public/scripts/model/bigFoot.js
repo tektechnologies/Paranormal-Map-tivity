@@ -26,11 +26,11 @@ var app = app || {};
     if(props.county){
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>'+props.county+'</h1>' +
-        `<button data-type="${props.type}" data-index="${props.row_index}">Details</button>`
+        `<a href="/detail/bigfoot">View Report</a>`
       });
 
       marker.addListener('click', function(event){
-        console.log({ event, clickThis: this })
+        console.log({ event, clickThis: this });
         infoWindow.open(map, marker);
       });
 

@@ -27,7 +27,7 @@ var app = app || {};
     if(props.city){
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>' + props.city + '</h1>' +
-        '<a href="'
+        '<a href="/detail/alien">View Report</a>'
       });
 
       marker.addListener('click', function(){
@@ -37,7 +37,7 @@ var app = app || {};
   };
   UfoSighting.prototype.toHtml= function() {
     let ufoTemplate = Handlebars.compile(document.getElementById('ufo-details').innerText);
-    return ufoTemplate(this);   
+    return ufoTemplate(this);
   };
   module.UfoSighting = UfoSighting;
 })(app);

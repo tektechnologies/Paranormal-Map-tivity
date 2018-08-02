@@ -61,7 +61,7 @@ app.get('/api/:type/:index',(req,res)=>{
   let apiUrl;
   let table;
   let id = parseInt(req.params.index);
-  if(req.params.type==="spirit"){
+  if(req.params.type==='spirit'){
     apiUrl='https://api.data.world/v0/sql/timothyrenner/haunted-places';
     table='haunted_places_2';
   }

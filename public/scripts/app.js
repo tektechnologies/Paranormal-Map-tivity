@@ -39,14 +39,19 @@ var app = app || {};
 
 
 
-  sightings.fetchAll = callback => {
-    $.get(`${app.Environment}/api/spirit`)
+  sightings.fetchAll = (bounds, callback) => {
+    let ne= bounds.getNorthEast();
+    let sw= bounds.getSouthWest();
+    console.log({ne,sw});
+    console.log(bounds.toJSON());
+    var boundsJson = bounds.toJSON();
+    $.get(`${app.Environment}/api/spirit`, boundsJson)
       .then(newData => sightings.loadAll(app.GhostSighting,newData))
       .then(callback);
-    $.get(`${app.Environment}/api/alien`)
+    $.get(`${app.Environment}/api/alien`, boundsJson)
       .then(newData =>sightings.loadAll(app.UfoSighting,newData))
       .then(callback);
-    $.get(`${app.Environment}/api/bigfoot`)
+    $.get(`${app.Environment}/api/bigfoot`, boundsJson)
       .then(newData => sightings.loadAll(app.BigFootSighting,newData))
       .then(callback);
   };

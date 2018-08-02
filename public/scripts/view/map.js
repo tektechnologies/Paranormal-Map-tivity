@@ -75,7 +75,7 @@ var app = app || {};
     google.maps.event.addListener(map, 'idle', function() {
       console.log('Map idle');
 
-      app.sightings.fetchAll((sightings) => {
+      app.sightings.fetchAll(map.getBounds(), (sightings) => {
         sightings.forEach(sighting => sighting.addMarker(map));
       });
     });

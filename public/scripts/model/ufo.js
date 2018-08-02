@@ -31,8 +31,8 @@ var app = app || {};
     if(props.name){
       console.log(props.name);
       var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>'+props.name+'</h1>' +
-        '<button onclick="details()">Details</button>'
+        content:'<h1>' + props.name + '</h1>' +
+        '<a href="'
       });
 
       marker.addListener('click', function(){

@@ -7,9 +7,8 @@ var app = app || {};
   var pages = {}
   module.pages = pages;
 
-  pages.initMapPage = () => {
+  pages.initMap = () => {
     console.log('loading');
-    $('#map').empty();
     app.showOnly('.map-view');
     $('.dropdown').show();
   }

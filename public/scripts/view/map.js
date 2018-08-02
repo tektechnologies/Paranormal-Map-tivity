@@ -5,17 +5,23 @@ var app = app || {};
 function initMap(){
 //map options
   var options = {
+    maxZoom:15,
+    minZoom:4,
     zoom:4,
     streetViewControl:false,
     center:{lat:39.8283,lng:-98.5795}
   };
+
+  
+
+
   //new map
   var mapContainer = document.getElementById('map');
   var map =  new google.maps.Map(mapContainer, options);
   $(mapContainer).on('click','button',function(){
     console.log('map clicked');
   });
-  
+
   //array of markers
   // var markers = [
   // {
@@ -27,7 +33,7 @@ function initMap(){
 
   // //Loop through marker array
   //    for(var i = 0; i<markers.length; i++){
-  //    addMarker(markers[i]) 
+  //    addMarker(markers[i])
   // }
 
 

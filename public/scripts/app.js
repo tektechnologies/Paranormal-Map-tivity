@@ -5,7 +5,6 @@ var app = app || {};
 (function(module){
 
   var sightings={};
-  sightings.all = [];
 
   module.sightings=sightings;
 
@@ -40,10 +39,6 @@ var app = app || {};
 
 
   sightings.fetchAll = (bounds, callback) => {
-    let ne= bounds.getNorthEast();
-    let sw= bounds.getSouthWest();
-    console.log({ne,sw});
-    console.log(bounds.toJSON());
     var boundsJson = bounds.toJSON();
     $.get(`${app.Environment}/api/spirit`, boundsJson)
       .then(newData => sightings.loadAll(app.GhostSighting,newData))

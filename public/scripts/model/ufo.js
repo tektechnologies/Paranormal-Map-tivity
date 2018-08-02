@@ -5,19 +5,15 @@ var app = app || {};
 
 (function(module){
   function UfoSighting(data){
-    this.index=data.row_index;
+    Object.keys(data).forEach(key => this[key] = data[key]);
     this.type='alien';
-    this.name=data.city;
-    this.lng=data.city_longitude;
-    this.lat=data.city_latitude;
-    this.description=data.text;
     this.iconImage='../icons/ufopin.png';
   }
 
   UfoSighting.prototype.addMarker = function(map) {
     var props = this;
     var marker = new google.maps.Marker({
-      position:{lng: props.lng, lat: props.lat},
+      position:{lng: props.city_longitude, lat: props.city_latitude},
       map:map,
       //icon:props.iconImage
     });
@@ -28,10 +24,10 @@ var app = app || {};
     }
 
     //check for content
-    if(props.name){
-      console.log(props.name);
+    if(props.city){
+      console.log(props.city);
       var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>' + props.name + '</h1>' +
+        content:'<h1>' + props.city + '</h1>' +
         '<a href="'
       });
 
@@ -40,6 +36,9 @@ var app = app || {};
       });
     }
   };
-
+  UfoSighting.prototype.toHtml= function() {
+    let ufoTemplate = Handlebars.compile(document.getElementById('ufo-details').innerText);
+    return ufoTemplate(this);   
+  };
   module.UfoSighting = UfoSighting;
 })(app);

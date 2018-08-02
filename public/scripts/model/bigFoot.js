@@ -5,18 +5,14 @@ var app = app || {};
 
 (function(module){
   function BigFootSighting(data){
-    this.index = data.row_index;
+    Object.keys(data).forEach(key => this[key] = data[key]);
     this.type = 'bigfoot';
-    this.name = data.county;
-    this.lng = data.longitude;
-    this.lat = data.latitude;
-    this.description = data.observed;
     this.iconImage = '../icons/bigfootpin.png';
   }
   BigFootSighting.prototype.addMarker = function(map) {
     var props = this;
     var marker = new google.maps.Marker({
-      position:{lng: props.lng, lat: props.lat},
+      position:{lng: props.longitude, lat: props.latitude},
       map:map,
       //icon:props.iconImage
     });
@@ -27,19 +23,28 @@ var app = app || {};
     }
 
     //check for content
-    if(props.name){
-      console.log(props.name);
+    if(props.county){
+      console.log(props.county);
       var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>'+props.name+'</h1>' +
-        `<button data-type="${props.type}" data-index="${props.index}">Details</button>`
+        content:'<h1>'+props.county+'</h1>' +
+        `<button data-type="${props.type}" data-index="${props.row_index}">Details</button>`
       });
 
       marker.addListener('click', function(event){
         console.log({ event, clickThis: this })
         infoWindow.open(map, marker);
       });
+
     }
   };
+
+  BigFootSighting.prototype.toHtml= function() {
+    let bigfootTemplate = Handlebars.compile(document.getElementById('bigfoot-details').innerText);
+    console.log('rendering template');
+    console.log(bigfootTemplate(this));
+    return bigfootTemplate(this);
+  };
+
 
   module.BigFootSighting = BigFootSighting;
 })(app);

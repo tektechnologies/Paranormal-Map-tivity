@@ -5,19 +5,15 @@ var app = app || {};
 
 (function(module){
   function GhostSighting(data){
-    this.index=data.row_index;
+    Object.keys(data).forEach(key => this[key] = data[key]);
     this.type='spirit';
-    this.name=data.location;
-    this.lng=data.longitude;
-    this.lat=data.latitude;
-    this.description=data.description;
     this.iconImage='../icons/ghostpin.png';
   }
 
   GhostSighting.prototype.addMarker = function(map) {
     var props = this;
     var marker = new google.maps.Marker({
-      position:{lng: props.lng, lat: props.lat},
+      position:{lng: props.longitude, lat: props.latitude},
       map:map,
       //icon:props.iconImage
     });
@@ -28,10 +24,10 @@ var app = app || {};
     }
 
     //check for content
-    if(props.name){
-      console.log(props.name);
+    if(props.location){
+      console.log(props.location);
       var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>'+props.name+'</h1>' +
+        content:'<h1>'+props.location+'</h1>' +
         '<button id = detailButton>Details</button>'
       });
 
@@ -40,16 +36,12 @@ var app = app || {};
       });
     }
   };
-  
-  
-
   GhostSighting.prototype.toHtml= function() {
-    let ghostTemplate = Handlebars.compile(document.getElementById('#ghost-details').innerText);
-    return ghostTemplate(this);
-      
+    let ghostTemplate = Handlebars.compile(document.getElementById('ghost-details').innerText);
+    return ghostTemplate(this);    
   };
 
 // Book.prototype.toHtml = function(){return app.render('#detail-template', this);}
 
   module.GhostSighting = GhostSighting;
-})(app);
+})(app);  

@@ -16,18 +16,20 @@ var app = app || {};
   };
 
   sightings.loadOne = (type, index) => {
-    console.log('loadOne is being randed');
+    
     $.get(`${app.Environment}/api/${type}/${index}`)
       .then(newData => {
+        let one={};
         if(newData.text){
-          console.log('is alien!');
+          one = new app.UfoSighting(newData);
         }
         if(newData.description){
-          console.log('is ghost!');
+          one = new app.GhostSighting(newData);
         }
         if(newData.observed){
-          console.log('is bigfoot!');
+          one = new app.BigFootSighting(newData);
         }
+        console.log(one);
       })
   };
 

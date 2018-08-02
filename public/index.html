@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -38,20 +37,28 @@
           </ul>
       </div>
   </script>
+  <script class="test" type="text/x-handlebars-template">
+      <div>
+          <h1>{{name}}</h1>
+      </div>
+  </script>
 </head>
 <body>
   <header> <h1>hellooo, im a freaking ghost</h1></header>
+  <nav>
+    <li>
+      <a href='/'>Home Page</a>
+    </li>
+  </nav>
   <!-- the drop down menu is being borrowed from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_filter
       the javascript has not been added as of 7/31 -->
   
   <nav class="dropdown container">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-    <div id="Dropdown" class="dropdown-content">
-      <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">  SEARCH FIELD-->
-      <a href="#ghosts">Ghost Sightings</a>
-      <a href="#ufo">U.F.O. Sightings</a>
-      <a href="#bigfoot">Sasquatch Sightings</a>
-    </div>
+    <select>
+        <option value="ghosts">Ghosts</option>
+        <option value="aliens">Aliens</option>
+        <option value="bigfoot">Sasquatch</option>
+    </select>
   </nav>
   <section class="map-view container" id="map">
     <h1>My Paranormal Map</h1>
@@ -62,7 +69,14 @@
   <section class="about container" id='about-us'>
       <section id="taylor-info">vhiviv</section>
       <section id="ethan-info">kbikvbhv</section>
-      <section id="john-info">Hwbowbo</section>
+      <section id="john-info">
+        <h3>
+          John Miester
+        </h3>
+        <img id="john-img" src='#'>
+        <p>
+          I am new to the coding world. I haven't had any experience building websites until I came to DeltaV. Within the past two months, I have gone from being a novice to being somewhat experienced with building and creating websites. Through DeltaV, I have learned how to use javascript, html, css, node.js, SQL and express. 
+        </p></section>
       <section id="ben-info">buigiugiu</section>
   </section>
   <footer>

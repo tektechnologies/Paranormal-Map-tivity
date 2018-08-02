@@ -23,4 +23,3 @@ var app = app || {};
 // };
 
 // Book.prototype.toHtml = function(){return app.render('#detail-template', this);}
-

@@ -31,10 +31,11 @@ var app = app || {};
       console.log(props.name);
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>'+props.name+'</h1>' +
-        '<button onclick="details()">Details</button>'
+        `<button data-type="${props.type}" data-index="${props.index}">Details</button>`
       });
 
-      marker.addListener('click', function(){
+      marker.addListener('click', function(event){
+        console.log({ event, clickThis: this })
         infoWindow.open(map, marker);
       });
     }

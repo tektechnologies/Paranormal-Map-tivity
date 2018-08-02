@@ -38,9 +38,10 @@ app.get('/api/spirit',(req, res)=>{
     .send({query})
     .then((result)=>{
       res.send(result.body);
-    }, err=>{
+    })
+    .catch( err=>{
       console.error(err);
-      res.sendStatus(500).send(err);
+      res.sendStatus(500,err);
     });
 });
 
@@ -51,8 +52,10 @@ app.get('/api/alien', (req,res)=>{
     .send({query: 'SELECT row_index,city, city_longitude, city_latitude, text FROM nuforc_reports WHERE city_latitude IS NOT NULL LIMIT 10'})
     .then((result)=>{
       res.send(result.body);
-    }, err=>{
-      res.sendStatus(500).send(err);
+    })
+    .catch( err=>{
+      console.error(err);
+      res.sendStatus(500,err);
     });
 });
 
@@ -63,8 +66,10 @@ app.get('/api/bigfoot', (req,res)=>{
     .send({query: 'SELECT row_index,county, latitude, longitude, observed FROM bfro_reports_geocoded WHERE latitude IS NOT NULL LIMIT 10'})
     .then((result)=>{
       res.send(result.body);
-    }, err=>{
-      res.sendStatus(500).send(err);
+    })
+    .catch( err=>{
+      console.error(err);
+      res.sendStatus(500,err);
     });
 });
 

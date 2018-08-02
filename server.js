@@ -71,10 +71,21 @@ app.get('/api/alien', (req,res)=>{
 });
 
 app.get('/api/bigfoot', (req,res)=>{
+  var s = req.query.south;
+  var n = req.query.north;
+  var w = req.query.west;
+  var e = req.query.east;
+  var query = `
+  SELECT row_index,county, latitude, longitude, observed 
+  FROM bfro_reports_geocoded 
+  WHERE latitude BETWEEN ${s} AND ${n} 
+  AND longitude BETWEEN ${w} AND ${e} 
+  LIMIT 50
+  `;
   superagent.post('https://api.data.world/v0/sql/timothyrenner/bfro-sightings-data')
     .set('Authorization', `Bearer ${TOKEN}`)
     .type('form')
-    .send({query: 'SELECT row_index,county, latitude, longitude, observed FROM bfro_reports_geocoded WHERE latitude IS NOT NULL LIMIT 10'})
+    .send({query})
     .then((result)=>{
       res.send(result.body);
     })

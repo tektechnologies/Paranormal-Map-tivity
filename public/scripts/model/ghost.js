@@ -34,6 +34,7 @@ var app = app || {};
         infoWindow.open(map, marker);
       });
     }
+    marker.type=this.type;
     return marker;
   };
   GhostSighting.prototype.toHtml= function() {

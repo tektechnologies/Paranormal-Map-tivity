@@ -34,24 +34,38 @@ var app = app || {};
     google.maps.event.addListener(map, 'idle', function() {
       console.log('Map idle');
 
+      //remove existing markers
+      maps.markers.forEach(marker=>{
+        marker.setMap(null);
+      });
+
+      maps.markers.length=0;
+
       app.sightings.fetchAll(map.getBounds(), (sightings) => {
-        sightings.forEach(sighting => maps.markers.push(sighting.addMarker(map)));
+        sightings.forEach(sighting =>{ 
+          var marker = sighting.addMarker(map);
+          var checkbox = $(`[name="${marker.type}"]`);
+          var isChecked = checkbox.prop('checked');
+          marker.setVisible(isChecked);
+
+          maps.markers.push(marker);
+          
+
+
+        });
         console.log(maps.markers);
       });
     });
   };
-  $('#bigfoot_checkbox').on('click', function(event) {
-    $('[src="../icons/bigfootpin.png"]').parent().toggle();
+  $('input[type="checkbox"]').on('click', function(event) {
+    // $('[src="../icons/bigfootpin.png"]').parent().toggle();
     console.log('checkbox clicked');
-  })
-  $('#alien_checkbox').on('click', function(event) {
-    $('[src="../icons/ufopin.png"]').parent().toggle();
-    console.log('checkbox clicked');
-  })
-  $('#ghost_checkbox').on('click', function(event) {
-    $('[src="../icons/ghostpin.png"]').parent().toggle();
-    console.log('checkbox clicked');
-  })
+    maps.markers.forEach(marker=>{
+      if(marker.type===this.name){
+        marker.setVisible(this.checked);
+      }
+    });
+  });
 
 
 })(app);

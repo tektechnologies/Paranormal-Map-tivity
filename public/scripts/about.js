@@ -10,7 +10,7 @@ var app = app || {};
   pages.initMap = () => {
     console.log('loading');
     app.showOnly('.map-view');
-    $('.dropdown').show();
+    $('.check').show();
   };
 
   pages.initAboutPage = () => {

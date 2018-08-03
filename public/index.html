@@ -53,13 +53,14 @@
   <!-- the drop down menu is being borrowed from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_filter
       the javascript has not been added as of 7/31 -->
   
-  <nav class="dropdown container">
-    <select>
-        <option value="ghosts">Ghosts</option>
-        <option value="aliens">Aliens</option>
-        <option value="bigfoot">Sasquatch</option>
-    </select>
-  </nav>
+  <div class='check container'>
+    <h1>Filter Your Choices Here</h1>
+    <form class='checkbox'>
+      <label><input type='checkbox' id='ghost_checkbox'/>Ghosts</label>
+      <label><input type='checkbox' id='alien_checkbox'/>Aliens</label>
+      <label><input type='checkbox' id='bigfoot_checkbox'/>BigFoot</label>
+    </form>
+  </div>
   <section class="map-view container">
     <h1>My Paranormal Map</h1>
     <div id="map"></div>

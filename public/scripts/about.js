@@ -8,7 +8,6 @@ var app = app || {};
   module.pages = pages;
 
   pages.initMap = () => {
-    console.log('loading');
     app.showOnly('.map-view');
     $('.check').show();
   };

@@ -23,6 +23,7 @@ var app = app || {};
 
   pages.initDetailPage = () => {
     app.showOnly('.detail-view');
+    $('.detail-view').empty();
   };
 
 

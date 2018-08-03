@@ -42,7 +42,5 @@ var app = app || {};
     return ghostTemplate(this);
   };
 
-  // Book.prototype.toHtml = function(){return app.render('#detail-template', this);}
-
   module.GhostSighting = GhostSighting;
 })(app);

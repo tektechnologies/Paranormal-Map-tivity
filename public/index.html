@@ -46,24 +46,29 @@
       <a href='/'>Home Page</a>
     </li>
   </nav>
-  <!-- the drop down menu is being borrowed from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_filter
-      the javascript has not been added as of 7/31 -->
-  
-  <nav class="dropdown container">
-    <select>
-        <option value="ghosts">Ghosts</option>
-        <option value="aliens">Aliens</option>
-        <option value="bigfoot">Sasquatch</option>
-    </select>
-  </nav>
-  <section class="map-view container" id="map">
+  <div class='check container'>
+    <h3>Filter Your Choices Here</h3>
+    <form class='checkbox'>
+      <label><input type='checkbox' id='ghost_checkbox'/>Ghosts</label>
+      <label><input type='checkbox' id='alien_checkbox'/>Aliens</label>
+      <label><input type='checkbox' id='bigfoot_checkbox'/>BigFoot</label>
+    </form>
+  </div>
+  <section class="map-view container">
     <h3>My Paranormal Map</h3>
     <div id="map"></div>
-    <div id="details"></div>
   </section>
   <section class="detail-view container"></section>
   <section class="about container" id='about-us'>
-      <section id="taylor-info">vhiviv</section>
+      <section id="taylor-info">
+          <h3>
+              Taylor Robinson
+          </h3>
+          <img src="" alt="">
+          <p>
+            My name is Taylor Robinson. I am an enthusiast of all things paranormal. I wanted to make this website so that we could map out the different points of paranormal occurences in an interesting and in depth way. In doing so we may be able to find some correlation between the points of interest. It's my hope that our website gets people interested in learning more about the paranormal and delving deeper into the unknown.
+          </p>
+      </section>
       <section id="ethan-info">kbikvbhv</section>
       <section id="john-info">
         <h3>
@@ -74,6 +79,9 @@
           I am new to the coding world. I haven't had any experience building websites until I came to DeltaV. Within the past two months, I have gone from being a novice to being somewhat experienced with building and creating websites. Through DeltaV, I have learned how to use javascript, html, css, node.js, SQL and express. 
         </p></section>
       <section id="ben-info">buigiugiu</section>
+  </section>
+  <section class="fourOhFour-view container">
+    <img src="https://image.freepik.com/free-vector/hand-drawn-404-error_23-2147738787.jpg">
   </section>
   <footer>
       <a href="/about">About Us</a>
@@ -88,7 +96,7 @@
     <script src="/scripts/model/ufo.js"></script>
     <script src="/scripts/model/ghost.js"></script>
     <script src="/scripts/view/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD40VcbEihKDdsk9KSqHGEAg0RH3gmomu8&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD40VcbEihKDdsk9KSqHGEAg0RH3gmomu8&callback=app.maps.initMap"
         async defer></script>
     <script src='/scripts/routes.js'></script>
 

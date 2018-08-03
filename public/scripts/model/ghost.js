@@ -25,23 +25,23 @@ var app = app || {};
 
     //check for content
     if(props.location){
-      console.log(props.location);
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>'+props.location+'</h1>' +
-        '<button id = detailButton>Details</button>'
+        `<a href="/detail/spirit/${this.row_index}">View Report</a>`
       });
 
       marker.addListener('click', function(){
         infoWindow.open(map, marker);
       });
     }
+    return marker;
   };
   GhostSighting.prototype.toHtml= function() {
     let ghostTemplate = Handlebars.compile(document.getElementById('ghost-details').innerText);
-    return ghostTemplate(this);    
+    return ghostTemplate(this);
   };
 
-// Book.prototype.toHtml = function(){return app.render('#detail-template', this);}
+  // Book.prototype.toHtml = function(){return app.render('#detail-template', this);}
 
   module.GhostSighting = GhostSighting;
-})(app);  
+})(app);

@@ -5,18 +5,17 @@ var app = app || {};
 (function(module){
 
   var sightings={};
-  sightings.all = [];
 
   module.sightings=sightings;
 
   sightings.loadAll = (ctor,newData) => {
-    sightings.all = sightings.all.concat(newData.map(function(report) {
+    return newData.map(function(report) {
       return new ctor(report);
-    }));
+    });
   };
 
   sightings.loadOne = (type, index) => {
-    
+
     $.get(`${app.Environment}/api/${type}/${index}`)
       .then(newData => {
         let one={};
@@ -34,15 +33,21 @@ var app = app || {};
           $('.detail-view').empty().append(new app.BigFootSighting(newData).toHtml());
         }
         console.log(one);
-      })
+      });
   };
 
 
 
-  sightings.fetchAll = callback => {
-    $.get(`${app.Environment}/api/spirit`)
-      .then(newData => sightings.loadAll(app.GhostSighting,newData));
-    $.get(`${app.Environment}/api/alien`).then(newData =>sightings.loadAll(app.UfoSighting,newData));
-    $.get(`${app.Environment}/api/bigfoot`).then(newData => sightings.loadAll(app.BigFootSighting,newData));
+  sightings.fetchAll = (bounds, callback) => {
+    var boundsJson = bounds.toJSON();
+    $.get(`${app.Environment}/api/spirit`, boundsJson)
+      .then(newData => sightings.loadAll(app.GhostSighting,newData))
+      .then(callback);
+    $.get(`${app.Environment}/api/alien`, boundsJson)
+      .then(newData =>sightings.loadAll(app.UfoSighting,newData))
+      .then(callback);
+    $.get(`${app.Environment}/api/bigfoot`, boundsJson)
+      .then(newData => sightings.loadAll(app.BigFootSighting,newData))
+      .then(callback);
   };
 })(app);

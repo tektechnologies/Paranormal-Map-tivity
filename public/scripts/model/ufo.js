@@ -25,20 +25,20 @@ var app = app || {};
 
     //check for content
     if(props.city){
-      console.log(props.city);
       var infoWindow = new google.maps.InfoWindow({
         content:'<h1>' + props.city + '</h1>' +
-        '<a href="'
+        `<a href="/detail/alien/${this.row_index}">View Report</a>`
       });
 
       marker.addListener('click', function(){
         infoWindow.open(map, marker);
       });
     }
+    return marker;
   };
   UfoSighting.prototype.toHtml= function() {
     let ufoTemplate = Handlebars.compile(document.getElementById('ufo-details').innerText);
-    return ufoTemplate(this);   
+    return ufoTemplate(this);
   };
   module.UfoSighting = UfoSighting;
 })(app);

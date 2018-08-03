@@ -4,19 +4,27 @@ var app = app || {};
 
 (function(module){
 
-  var pages = {}
+  var pages = {};
   module.pages = pages;
 
   pages.initMap = () => {
     console.log('loading');
     app.showOnly('.map-view');
-    $('.dropdown').show();
-  }
+    $('.check').show();
+  };
 
-  pages.initAboutPage = (event) => {
-    $('.about').hide();
+  pages.initAboutPage = () => {
     app.showOnly('.about');
-  }
+  };
 
-  
+  pages.initNothing = () => {
+    app.showOnly('.fourOhFour-view');
+  };
+
+  pages.initDetailPage = () => {
+    $('.detail-view').show();
+
+  };
+
+
 })(app);

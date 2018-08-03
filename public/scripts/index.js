@@ -16,10 +16,3 @@ var app = app || {};
     $(selector).show();
   };
 })(app);
-
-app.Ghost.prototype.toHtml= function() {
-  let ghostTemplate = Handlebars.compile(document.getElementById('#ghost-details').innerText);
-  ghostTemplate();
-};
-
-// Book.prototype.toHtml = function(){return app.render('#detail-template', this);}

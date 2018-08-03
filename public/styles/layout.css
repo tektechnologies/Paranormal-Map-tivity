@@ -3,6 +3,8 @@ header {
   background-image: url('/images/sky.jpg');
   background-size: cover;
   background-position: center;
+  height: 150px;
+  width: 100%;
 }
 
 footer {

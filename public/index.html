@@ -12,31 +12,31 @@
   <link rel="stylesheet" type="text/css" href="/styles/module.css">
   <title>Paranormal Map-tivity</title>
   <script id="ghost-details" type="text/x-handlebars-template">
-      <div class="ghost-details">
-          <ul>
-              <li><h4>{{city}}, {{state}}</h4></li>            
-              <li>{{description}}</li>
-          </ul>
-      </div>
+    <div class="ghost-details">
+        <h4>{{city}}, {{state}}</h4>
+        <ul>            
+            <li>{{description}}</li>
+        </ul>
+    </div>
   </script>
   <script id="ufo-details" type="text/x-handlebars-template">
       <div class="ufo-details">
-          <ul>
-              <li><h4>{{city}}</h4></li>
-              <li>{{date_time}}</li>
-              <li>Shape of the craft: {{shape}}</li>            
-              <li>{{summary}}</li>
-              <li>Original report: <a href="{{report_link}}">{{report_link}}</a></li>
-          </ul>
+        <h4>{{city}}</h4>  
+        <ul>
+            <li>{{date_time}}</li>
+            <li>Shape of the craft: {{shape}}</li>            
+            <li>{{summary}}</li>
+            <li>Original report: <a href="{{report_link}}">{{report_link}}</a></li>
+        </ul>
       </div>
   </script>
   <script id="bigfoot-details" type="text/x-handlebars-template">
       <div class="bigfoot-details">
-          <ul>
-              <li><h4>{{county}}, {{state}}</h4></li>
-              <li>{{date}}</li>
-              <li>{{observed}}</li>
-          </ul>
+        <h4>{{county}}, {{state}}</h4>
+        <ul>
+            <li>{{date}}</li>
+            <li>{{observed}}</li>
+        </ul>
       </div>
   </script>
 </head>
@@ -45,27 +45,21 @@
     <div class="logo">
         <img src="/images/logo.png">
     </div>
-    <div><h1>Paranormal Map-tivity</h1></div>
-    <div><img src="/images/grass.png" class="grass"></div>
-</header>
-  <nav>
-    <li>
-      <a href='/'>Home Page</a>
-    </li>
-  </nav>  
-  <div class='check container'>
-    <h3>Filter Your Choices Here</h3>
-    <form class='checkbox'>
-      <label><input type='checkbox' name = 'spirit' id='ghost_checkbox' checked/>Ghosts</label>
-      <label><input type='checkbox' name = 'alien' id='alien_checkbox' checked/>Aliens</label>
-      <label><input type='checkbox' name = 'bigfoot' id='bigfoot_checkbox' checked/>BigFoot</label>
+    <div><h1><a href="/">Paranormal Map-tivity</a></h1></div>
+</header> 
+  <div class="check container">
+    <h3 class="filter">Filter Your Choices Here</h3>
+    <form class="checkbox">
+      <label><input type="checkbox" name = "spirit" id="ghost_checkbox" checked/>Ghosts</label>
+      <label><input type="checkbox" name = "alien" id="alien_checkbox" checked/>Aliens</label>
+      <label><input type="checkbox" name = "bigfoot" id="bigfoot_checkbox" checked/>BigFoot</label>
     </form>
   </div>
   <section class="map-view container">
     <div id="map"></div>
   </section>
   <section class="detail-view container"></section>
-  <section class="about container" id='about-us'>
+  <section class="about container" id="about-us">
       <section id="taylor-info">
           <h3>
               Taylor Robinson
@@ -80,7 +74,7 @@
         <h3>
           John Miester
         </h3>
-        <img id="john-img" src='#'>
+        <img id="john-img" src="#">
         <p>
           I am new to the coding world. I haven't had any experience building websites until I came to DeltaV. Within the past two months, I have gone from being a novice to being somewhat experienced with building and creating websites. Through DeltaV, I have learned how to use javascript, html, css, node.js, SQL and express. 
         </p></section>
@@ -90,21 +84,22 @@
     <img src="https://image.freepik.com/free-vector/hand-drawn-404-error_23-2147738787.jpg">
   </section>
   <footer>
-      <a href="/about">About Us</a>
+      <div><a href="/about">About Us</a></div>
+      <div>&copy; 2018: </div>
     </footer>
     <script src="/scripts/vendor/jquery-3.3.1.min.js"></script>
     <script src="/scripts/vendor/handlebars-v4.0.11.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script src='/scripts/index.js'></script>
-    <script src='/scripts/about.js'></script>
-    <script src='/scripts/app.js'></script>
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/about.js"></script>
+    <script src="/scripts/app.js"></script>
     <script src="/scripts/model/bigFoot.js"></script>
     <script src="/scripts/model/ufo.js"></script>
     <script src="/scripts/model/ghost.js"></script>
     <script src="/scripts/view/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD40VcbEihKDdsk9KSqHGEAg0RH3gmomu8&callback=app.maps.initMap"
         async defer></script>
-    <script src='/scripts/routes.js'></script>
+    <script src="/scripts/routes.js"></script>
 
 </body>
 

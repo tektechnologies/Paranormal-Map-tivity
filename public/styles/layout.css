@@ -4,13 +4,10 @@ header {
   background-size: cover;
   background-position: center;
   height: 150px;
-  width: 100%;
+  padding: 10px 0 30px 10px;
+  position: relative;
 }
 
-footer {
-  height: 220px;
-  width: 100%;
-}
 /* DETAILS PAGES */
 .ufo-details ul li:nth-child(2), .bigfoot-details ul li:nth-child(2) {
   margin-bottom: 15px;
@@ -25,3 +22,12 @@ footer {
 .bigfoot-details:first-child {
   margin-bottom: 0px;
 }
+
+header h1 {
+  padding: 33px 0 0 162px;
+}
+
+form {
+  margin-bottom: 10px;
+}
+

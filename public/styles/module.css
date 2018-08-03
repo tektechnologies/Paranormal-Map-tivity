@@ -3,14 +3,43 @@
   width: 100%;
   margin: 0 auto 0 auto;
 }
+header::after {
+  content: "";
+  height: 52px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-image: url("/images/grass.png");
+}
 
-.bigfoot-deails,
+.bigfoot-details,
 .ghost-details,
 .ufo-details {
   background-color: #EAE0D5;
   padding: 20px 10px 5px 10px;
-  margin-top:30px;
+  margin-top:80px;
   border-radius: 8px;
+}
+
+.bigfoot-details li,
+.ghost-details li,
+.ufo-details li {
+  padding-left: 10px
+}
+
+.ghost-details h4, 
+.ufo-details h4, 
+.bigfoot-details h4 {
+  margin-top: -50px;
+  margin-right: 10px;
+  font-family: 'Special Elite', cursive;
+  font-size: 24pt;
+  background-color: #EAE0D5;
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+  border-radius: 10px 10px 0 0;
 }
 
 .mgm-style-pbc h1 {
@@ -26,3 +55,25 @@
 .logo {
   float: left;
 }
+
+label {
+  color: white;
+}
+
+h1 a {
+  color: white;
+  -webkit-text-stroke: .1px black;
+  text-shadow: 2px 2px #666666;
+  text-decoration: none;
+}
+
+.filter{
+  color: white;
+}
+.tab {
+  width: 10px;
+  height: 20px;
+  background-color: #EAE0D5; 
+  border-radius-top: 10px;
+}
+

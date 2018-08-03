@@ -24,6 +24,7 @@ header::after {
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
+  min-height: 300px;
 }
 
 .bigfoot-details li,

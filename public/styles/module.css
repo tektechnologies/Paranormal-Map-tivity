@@ -67,7 +67,7 @@ header::after {
   float: left;
   position: relative;
   z-index: 2;
-  margin-left: 45px;
+  margin-left: 15px;
 }
 
 label {
@@ -114,14 +114,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media {
-  h1 {
-    font-family: 'Bangers', cursive;
-    font-size: 24pt;
-    font-variant: small-caps;
-  }
-}
-
 #xLink{
   text-decoration: none;
   float: right;
@@ -135,3 +127,27 @@ footer a:hover {
   min-height: 400px;
 }
 
+@media (min-width: 768px){
+  h1 {
+    font-size: 64pt;
+  }
+  
+  h3 {
+    font-size: 36pt;
+  }
+
+  h4 {
+    font-size: 24pt
+  }
+  .logo {
+    float: left;
+    position: relative;
+    z-index: 2;
+    margin-left: 45px;
+  }
+
+  header h1 {
+    padding: 33px 0 0 162px;
+  }
+
+}

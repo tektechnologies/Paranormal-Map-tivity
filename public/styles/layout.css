@@ -35,3 +35,19 @@ form {
 footer div {
  padding-top: 10px;
 }
+
+.project-img {
+ float: left;
+  margin-right: 2%;
+  width: 20%;
+}
+
+.info {
+  padding: 2%;
+  clear: both; 
+  overflow: hidden;
+}
+
+.padding {
+  margin-bottom: 8%
+}

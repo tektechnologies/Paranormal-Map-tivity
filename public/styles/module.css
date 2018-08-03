@@ -114,6 +114,14 @@ footer a:hover {
   text-decoration: underline;
 }
 
+@media {
+  h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 24pt;
+    font-variant: small-caps;
+  }
+}
+
 #xLink{
   text-decoration: none;
   float: right;

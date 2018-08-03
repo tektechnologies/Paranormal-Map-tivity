@@ -33,7 +33,6 @@ var app = app || {};
         console.log({ event, clickThis: this })
         infoWindow.open(map, marker);
       });
-
     }
     return marker;
   };

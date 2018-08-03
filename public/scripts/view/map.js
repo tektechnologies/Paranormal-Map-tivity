@@ -31,39 +31,6 @@ var app = app || {};
     //    addMarker(markers[i])
     // }
 
-
-    var ghostTest={
-      location:'Your mom\'s place',
-      longitude:-91.536121,
-      latitude:41.661290,
-      description:'Last night'
-    };
-
-    let ghost= new app.GhostSighting(ghostTest);
-    ghost.addMarker(map);
-
-    var ufoTest={
-      city_location:'Right Here',
-      city_longitude: -91.457970,
-      city_latitude: 42.485785,
-      text: 'Right Now'
-    };
-
-    let ufo= new app.UfoSighting(ufoTest);
-    ufo.addMarker(map);
-
-
-    var bigfootTest = {
-      row_index: '3',
-      county: 'Look Over Here',
-      longitude: -91.532820,
-      latitude: 42.600914,
-      observed: 'Look Over There'
-    };
-
-    let bigfoot = new app.BigFootSighting(bigfootTest);
-    bigfoot.addMarker(map);
-
     google.maps.event.addListener(map, 'idle', function() {
       console.log('Map idle');
 
@@ -73,7 +40,17 @@ var app = app || {};
       });
     });
   };
-
-
+  $('#bigfoot_checkbox').on('click', function(event) {
+    $('[src="../icons/bigfootpin.png"]').parent().toggle();
+    console.log('checkbox clicked');
+  })
+  $('#alien_checkbox').on('click', function(event) {
+    $('[src="../icons/ufopin.png"]').parent().toggle();
+    console.log('checkbox clicked');
+  })
+  $('#ghost_checkbox').on('click', function(event) {
+    $('[src="../icons/ghostpin.png"]').parent().toggle();
+    console.log('checkbox clicked');
+  })
 
 })(app);

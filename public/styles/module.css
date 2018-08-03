@@ -20,4 +20,9 @@
 
 .grass {
   width: 100%;
+  display: block;
+}
+
+.logo {
+  float: left;
 }

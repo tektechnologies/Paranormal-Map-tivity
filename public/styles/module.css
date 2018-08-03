@@ -42,7 +42,7 @@ header::after {
   margin-top: -50px;
   margin-right: 10px;
   font-family: 'Special Elite', cursive;
-  font-size: 24pt;
+  font-size: 14pt;
   background-color: #EAE0D5;
   display: inline-block;
   padding: 10px;
@@ -139,8 +139,16 @@ footer a:hover {
   }
 
   h4 {
-    font-size: 24pt
+    font-size: 24pt;
   }
+
+  .ghost-details h4, 
+  .ufo-details h4, 
+  .bigfoot-details h4,
+  #about-us h3{
+    font-size: 24pt;
+}
+
   .logo {
     float: left;
     position: relative;

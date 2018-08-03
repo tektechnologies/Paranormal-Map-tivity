@@ -30,7 +30,8 @@ header::after {
 
 .ghost-details h4, 
 .ufo-details h4, 
-.bigfoot-details h4 {
+.bigfoot-details h4 
+{
   margin-top: -50px;
   margin-right: 10px;
   font-family: 'Special Elite', cursive;
@@ -56,6 +57,7 @@ header::after {
   float: left;
   position: relative;
   z-index: 2;
+  margin-left: 45px;
 }
 
 label {

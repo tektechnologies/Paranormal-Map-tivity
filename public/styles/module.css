@@ -54,6 +54,8 @@ header::after {
 
 .logo {
   float: left;
+  position: relative;
+  z-index: 2;
 }
 
 label {
@@ -86,3 +88,16 @@ h1 a {
   margin-top:-10px;
 }
 
+div h3 {
+  margin-top: 30px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: lightgreen;
+  text-decoration: underline;
+}

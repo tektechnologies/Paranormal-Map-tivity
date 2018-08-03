@@ -8,7 +8,6 @@ var app = app || {};
   module.pages = pages;
 
   pages.initMap = () => {
-    console.log('loading');
     app.showOnly('.map-view');
     $('.check').show();
   };
@@ -23,6 +22,7 @@ var app = app || {};
 
   pages.initDetailPage = () => {
     app.showOnly('.detail-view');
+    $('.detail-view').empty();
   };
 
 

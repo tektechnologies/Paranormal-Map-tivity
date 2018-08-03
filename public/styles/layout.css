@@ -1,10 +1,11 @@
 header {
-  width: 100%;
   background-image: url('/images/sky.jpg');
   background-size: cover;
   background-position: center;
   height: 150px;
   padding: 10px 0 30px 10px;
+  margin-left: -45px;
+  margin-right: -45px;
   position: relative;
 }
 
@@ -31,3 +32,6 @@ form {
   margin-bottom: 10px;
 }
 
+footer div {
+ padding-top: 10px;
+}

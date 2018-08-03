@@ -8,9 +8,9 @@ var app = app || {};
 
   module.sightings=sightings;
 
-  sightings.loadAll = (ctor,newData) => {
+  sightings.loadAll = (Ctor,newData) => {
     return newData.map(function(report) {
-      return new ctor(report);
+      return new Ctor(report);
     });
   };
 
@@ -18,21 +18,15 @@ var app = app || {};
 
     $.get(`${app.Environment}/api/${type}/${index}`)
       .then(newData => {
-        let one={};
         if(newData.description){
-          one = new app.GhostSighting(newData);
           $('.detail-view').empty().append(new app.GhostSighting(newData).toHtml());
         }
         if(newData.text){
-          one = new app.UfoSighting(newData);
           $('.detail-view').empty().append(new app.UfoSighting(newData).toHtml());
         }
         if(newData.observed){
-          console.log(newData);
-          console.log(new app.BigFootSighting(newData));
           $('.detail-view').empty().append(new app.BigFootSighting(newData).toHtml());
         }
-        console.log(one);
       });
   };
 

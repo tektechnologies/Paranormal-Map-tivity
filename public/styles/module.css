@@ -94,3 +94,11 @@ footer a:hover {
   color: lightgreen;
   text-decoration: underline;
 }
+
+@media {
+  h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 24pt;
+    font-variant: small-caps;
+  }
+}

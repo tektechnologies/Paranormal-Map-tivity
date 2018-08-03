@@ -136,3 +136,8 @@ footer a:hover {
   min-height: 400px;
 }
 
+a{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+

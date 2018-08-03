@@ -22,8 +22,7 @@ var app = app || {};
   };
 
   pages.initDetailPage = () => {
-    $('.detail-view').show();
-
+    app.showOnly('.detail-view');
   };
 
 

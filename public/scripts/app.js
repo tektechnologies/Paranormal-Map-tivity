@@ -8,9 +8,9 @@ var app = app || {};
 
   module.sightings=sightings;
 
-  sightings.loadAll = (ctor,newData) => {
+  sightings.loadAll = (Ctor,newData) => {
     return newData.map(function(report) {
-      return new ctor(report);
+      return new Ctor(report);
     });
   };
 

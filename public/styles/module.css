@@ -92,3 +92,12 @@ footer a:hover {
   color: lightgreen;
   text-decoration: underline;
 }
+#xLink{
+  text-decoration: none;
+  float: right;
+  color: black;
+  font-size: 25px;
+  text-shadow: -1px 2px 0px rgba(150, 150, 150, 1);
+  margin-top:-10px;
+}
+

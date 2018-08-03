@@ -24,6 +24,7 @@ header::after {
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
+  min-height: 300px;
 }
 
 .bigfoot-details li,
@@ -127,6 +128,7 @@ footer a:hover {
   min-height: 400px;
 }
 
+
 @media (min-width: 768px){
   h1 {
     font-size: 64pt;
@@ -151,3 +153,10 @@ footer a:hover {
   }
 
 }
+
+a{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+

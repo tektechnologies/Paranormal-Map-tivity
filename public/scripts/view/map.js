@@ -8,7 +8,7 @@ var app = app || {};
   var maps = {};
   module.maps = maps;
   maps.markers = [];
-  
+
 
   maps.initMap = () =>{
     console.log('initMap');
@@ -42,24 +42,20 @@ var app = app || {};
       maps.markers.length=0;
 
       app.sightings.fetchAll(map.getBounds(), (sightings) => {
-        sightings.forEach(sighting =>{ 
+        sightings.forEach(sighting =>{
           var marker = sighting.addMarker(map);
           var checkbox = $(`[name="${marker.type}"]`);
           var isChecked = checkbox.prop('checked');
           marker.setVisible(isChecked);
 
           maps.markers.push(marker);
-          
-
 
         });
         console.log(maps.markers);
       });
     });
   };
-  $('input[type="checkbox"]').on('click', function(event) {
-    // $('[src="../icons/bigfootpin.png"]').parent().toggle();
-    console.log('checkbox clicked');
+  $('input[type="checkbox"]').on('click', function() {
     maps.markers.forEach(marker=>{
       if(marker.type===this.name){
         marker.setVisible(this.checked);

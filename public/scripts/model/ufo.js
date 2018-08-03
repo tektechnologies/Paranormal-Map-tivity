@@ -41,5 +41,6 @@ var app = app || {};
     let ufoTemplate = Handlebars.compile(document.getElementById('ufo-details').innerText);
     return ufoTemplate(this);
   };
+
   module.UfoSighting = UfoSighting;
 })(app);

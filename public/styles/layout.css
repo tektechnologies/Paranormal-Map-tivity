@@ -1,0 +1,23 @@
+header {
+  height: 150px;
+  width: 100%;
+}
+
+footer {
+  height: 220px;
+  width: 100%;
+}
+/* DETAILS PAGES */
+.ufo-details ul li:nth-child(2), .bigfoot-details ul li:nth-child(2) {
+  margin-bottom: 15px;
+}
+
+.ufo-details li, 
+.bigfoot-details li {
+  margin-bottom: 15px;
+}
+
+.ufo-details:first-child,
+.bigfoot-details:first-child {
+  margin-bottom: 0px;
+}

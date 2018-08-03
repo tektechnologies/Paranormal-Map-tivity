@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Cutive+Mono|Special+Elite" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="/styles/base.css">
   <link rel="stylesheet" type="text/css" href="/styles/layout.css">
@@ -24,7 +25,7 @@
               <li>{{date_time}}</li>
               <li>Shape of the craft: {{shape}}</li>            
               <li>{{summary}}</li>
-              <li><a href="{{report_link}}">{{report_link}}</a></li>
+              <li>Original report: <a href="{{report_link}}">{{report_link}}</a></li>
           </ul>
       </div>
   </script>
@@ -37,24 +38,16 @@
           </ul>
       </div>
   </script>
-  <script class="test" type="text/x-handlebars-template">
-      <div>
-          <h1>{{name}}</h1>
-      </div>
-  </script>
 </head>
 <body>
-  <header> <h1>hellooo, im a freaking ghost</h1></header>
+  <header> <h1>Paranormal Map-tivity</h1></header>
   <nav>
     <li>
       <a href='/'>Home Page</a>
     </li>
   </nav>
-  <!-- the drop down menu is being borrowed from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_filter
-      the javascript has not been added as of 7/31 -->
-  
   <div class='check container'>
-    <h1>Filter Your Choices Here</h1>
+    <h3>Filter Your Choices Here</h3>
     <form class='checkbox'>
       <label><input type='checkbox' id='ghost_checkbox'/>Ghosts</label>
       <label><input type='checkbox' id='alien_checkbox'/>Aliens</label>
@@ -62,7 +55,7 @@
     </form>
   </div>
   <section class="map-view container">
-    <h1>My Paranormal Map</h1>
+    <h3>My Paranormal Map</h3>
     <div id="map"></div>
   </section>
   <section class="detail-view container"></section>

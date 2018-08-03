@@ -53,4 +53,5 @@ var app = app || {};
     console.log('checkbox clicked');
   })
 
+
 })(app);

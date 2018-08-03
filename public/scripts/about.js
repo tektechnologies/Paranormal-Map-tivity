@@ -21,5 +21,10 @@ var app = app || {};
     app.showOnly('.fourOhFour-view');
   };
 
-  
+  pages.initDetailPage = () => {
+    $('.detail-view').show();
+
+  };
+
+
 })(app);

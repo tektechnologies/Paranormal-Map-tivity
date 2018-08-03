@@ -15,7 +15,7 @@ var app = app || {};
   };
 
   sightings.loadOne = (type, index) => {
-    
+
     $.get(`${app.Environment}/api/${type}/${index}`)
       .then(newData => {
         let one={};
@@ -33,7 +33,7 @@ var app = app || {};
           $('.detail-view').empty().append(new app.BigFootSighting(newData).toHtml());
         }
         console.log(one);
-      })
+      });
   };
 
 

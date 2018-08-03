@@ -25,7 +25,7 @@ header {
 }
 
 header h1 {
-  padding: 33px 0 0 162px;
+  padding: 56px 0 0 166px;
 }
 
 form {
@@ -35,6 +35,7 @@ form {
 footer div {
  padding-top: 10px;
 }
+
 
 .project-img {
  float: left;
@@ -51,3 +52,9 @@ footer div {
 .padding {
   margin-bottom: 8%
 }
+
+.fourOhFour-view img {
+  display: block;
+  margin: 30px auto;
+}
+
